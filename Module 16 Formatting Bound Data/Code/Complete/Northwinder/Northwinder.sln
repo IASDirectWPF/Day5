@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NW.WebAPI", "NW.WebAPI\NW.WebAPI.csproj", "{61778531-06D7-4A26-A622-419AC332E48A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NW.WPF", "NW.WPF\NW.WPF.csproj", "{3215A4A6-AA34-4E65-B122-CC577FF870EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NW.DAL", "NW.DAL\NW.DAL.csproj", "{B1A8DA66-6724-4A1A-B714-6FA42F93FEB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61778531-06D7-4A26-A622-419AC332E48A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61778531-06D7-4A26-A622-419AC332E48A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61778531-06D7-4A26-A622-419AC332E48A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61778531-06D7-4A26-A622-419AC332E48A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3215A4A6-AA34-4E65-B122-CC577FF870EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3215A4A6-AA34-4E65-B122-CC577FF870EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3215A4A6-AA34-4E65-B122-CC577FF870EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3215A4A6-AA34-4E65-B122-CC577FF870EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1A8DA66-6724-4A1A-B714-6FA42F93FEB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1A8DA66-6724-4A1A-B714-6FA42F93FEB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1A8DA66-6724-4A1A-B714-6FA42F93FEB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1A8DA66-6724-4A1A-B714-6FA42F93FEB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {945B6AB1-4631-400E-B230-384B805FF14C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>AdventureWorks Web API Client</title>
+    <script src="Scripts/jquery-2.1.4.js"></script> 
+
+    <script>
+        var uri = "api/Products";
+
+        function getProducts() {
+            $.getJSON(uri)
+                .done(function(data) {
+                    $.each(data, function (key, item) {
+                        $("<li>", { text: item }).appendTo($("#products"));
+                    });
+                })
+                .fail(function (jqXHR, textStatus, error) {
+                    console.log("textStatus: " + textStatus);
+                    console.log("error: " + error);
+                    alert("Error: " + jqXHR.responseJSON.Message);
+                });
+        }
+
+        function getProduct(id) {
+            $.ajax({
+                url: uri + "/" + id,
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    $("#product").html(data);
+                },
+                error: function(jqXHR, textStatus, error) {
+                    console.log("textStatus: " + textStatus);
+                    console.log("error: " + error);
+                    alert("Error: " + jqXHR.responseJSON.Message);
+                }
+            });
+        }
+
+        function postProduct(product) {
+            $.ajax({
+                url: uri,
+                type: 'POST',
+                data: JSON.stringify(product),
+                contentType: "application/json;charset=utf-8",
+                success: function(data, textStatus, jqXHR) {
+                    alert("Posted Successfully to " + jqXHR.getResponseHeader("Location"));
+                    refresh();
+                },
+                error: function(jqXHR, textStatus, error) {
+                    console.log("textStatus: " + textStatus);
+                    console.log("error: " + error);
+                    alert("Error: " + jqXHR.responseJSON.Message);
+                }
+            });
+        }
+
+        function putProduct(id, product) {
+            $.ajax({
+                url: uri + "/" + id,
+                type: 'PUT',
+                data: JSON.stringify(product),
+                contentType: "application/json;charset=utf-8",
+                success: function() {
+                    alert("Put Successful" );
+                    refresh();
+                },
+                error: function(jqXHR, textStatus, error) {
+                    console.log("textStatus: " + textStatus);
+                    console.log("error: " + error);
+                    alert("Error: " + jqXHR.responseJSON.Message);
+                }
+            });
+        }
+
+        function deleteProduct(id) {
+            $.ajax({
+                url: uri + "/" + id,
+                type: 'DELETE',
+                success: function() {
+                    alert("Deleted Successfully");
+                    refresh();
+                },
+                error: function(jqXHR, textStatus, error) {
+                    console.log("textStatus: " + textStatus);
+                    console.log("error: " + error);
+                    alert("Error: " + jqXHR.responseJSON.Message);
+                }
+            });
+        }
+
+        function refresh() {
+            $("#products").html("");
+            getProducts();
+        }
+
+        $(document).ready(function () {
+            refresh();
+        });
+
+        function find() {
+            var id = $("#textProductId").val();
+            getProduct(id);
+        }
+
+        function insertProduct() {
+            var product = $("#textProduct").val();
+            postProduct(product);
+        }
+
+        function updateProduct() {
+            var id = $("#textProductId").val();
+            var product = $("#textProduct").val();
+            putProduct(id, product);
+        }
+
+        function removeProduct() {
+            var id = $('#textProductId').val();
+            deleteProduct(id);
+        }
+    </script>
+
+</head>
+<body>
+    <div>
+        <h2>AdventureWorks Products</h2>
+        <ul id="products"></ul>
+        <input type="button" value="Refresh" onclick="refresh();" />
+    </div>
+
+    <div>
+        <h2>Find by ID</h2>
+        <input type="text" id="textProductId" size="5" />
+        <input type="button" value="Find" onclick="find();" />
+        <input type="button" value="Remove" onclick="removeProduct();" />
+        <p id="product" />
+    </div>
+
+    <div>
+        <h2>New/Updated Product Data</h2>
+        Product: <input type="text" id="textProduct" size="20" />
+        <input type="button" value="Insert" onclick="insertProduct();" />
+        <input type="button" value="Update" onclick="updateProduct();" />
+        <br />
+    </div>
+</body>
+</html>

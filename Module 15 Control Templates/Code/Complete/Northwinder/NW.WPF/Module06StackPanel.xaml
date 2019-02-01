@@ -1,0 +1,21 @@
+﻿<Window x:Class="NW.WPF.Module06StackPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NW.WPF"
+        mc:Ignorable="d"
+        Title="Module06StackPanel" Height="450" Width="800">
+    <Border Margin="5" Padding="5" Background="LightSteelBlue"
+        BorderBrush="SteelBlue" BorderThickness="3,5,3,5" CornerRadius="3"
+        VerticalAlignment="Top">
+        <StackPanel Margin="3">
+            <Label Margin="3" HorizontalAlignment="Center">
+                A Button Stack</Label>
+            <Button Margin="3" MaxWidth="200" MinWidth="100">Button 1</Button>
+            <Button Margin="3" MaxWidth="200" MinWidth="100">Button 2</Button>
+            <Button Margin="3" MaxWidth="200" MinWidth="100">Button 3</Button>
+            <Button Margin="3" MaxWidth="200" MinWidth="100">Button 4</Button>
+        </StackPanel>
+    </Border>
+</Window>

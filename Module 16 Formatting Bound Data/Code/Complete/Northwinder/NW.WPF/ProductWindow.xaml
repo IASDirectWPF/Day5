@@ -1,0 +1,31 @@
+﻿<Window x:Class="NW.WPF.ProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NW.WPF"
+        mc:Ignorable="d"
+        Title="ProductWindow" Height="300" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Margin="5">Product ID</Label>
+        <TextBox Grid.Row="0" Grid.Column="1" Margin="5" Text="{Binding Path=ProductID}"></TextBox>
+        <Label Grid.Row="1" Grid.Column="0" Margin="5">Product Name</Label>
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="5" Text="{Binding Path=ProductName}"></TextBox>
+        <Label Grid.Row="2" Grid.Column="0" Margin="5">Unit Price</Label>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="5" Text="{Binding Path=UnitPrice}"></TextBox>
+        <Label Grid.Row="3" Grid.Column="0" Margin="5">Units In Stock</Label>
+        <TextBox Grid.Row="3" Grid.Column="1" Margin="5" Text="{Binding Path=UnitsInStock}"></TextBox>
+        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Click="ButtonSave_Click">Save Product</Button>
+    </Grid>
+</Window>

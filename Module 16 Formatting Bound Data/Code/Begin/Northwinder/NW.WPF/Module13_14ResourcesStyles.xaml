@@ -1,0 +1,16 @@
+﻿<Window x:Class="NW.WPF.Module13_14ResourcesStyles"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NW.WPF"
+        mc:Ignorable="d"
+        Title="Module13_14ResourcesStyles" Height="450" Width="800">
+    <StackPanel> <!--Style="{StaticResource TimesNewSunriseStyle}"--> <!--Background="{StaticResource SunriseBrush}"-->
+        <TextBlock>TextBlock</TextBlock>
+        <Button>Button</Button>
+        <ListBox>
+            <ListBoxItem>ListBoxItem</ListBoxItem>
+        </ListBox>
+    </StackPanel>
+</Window>
